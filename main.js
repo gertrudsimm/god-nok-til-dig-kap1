@@ -94,6 +94,8 @@ function toggle(el){
 
 
 //CROW AT SECTION 1
+
+
 function pauseAudio() {
   //pause playing
   $("#crow").trigger('pause');
@@ -103,20 +105,7 @@ function pauseAudio() {
 
 setTimeout(pauseAudio, 7560);
 
-//TYPING AT SECTION 2
 
-window.addEventListener("scroll",function(){
-
-  let boxOne = document.getElementById('box-1');
-  let wrapOne = document.getElementById('pt-1');
-  let x = wrapOne.offsetHeight;
-  let y = wrapOne.offsetTop;
-  let z =  x + y;
-
-  if((window.pageYOffset > z) && (window.pageYOffset < z + 70)){
-   $("#type").trigger('play');
-  }
-},false);
 
 
 
@@ -181,6 +170,7 @@ function typeWriter() {
     document.getElementById("setting").innerHTML += txt.charAt(i);
     i++;
     setTimeout(typeWriter, speed);
+	$("#type").trigger('play');
   }
 }
 
