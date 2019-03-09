@@ -1,13 +1,32 @@
 //PRELOADER
-jQuery(document).ready(function($) {  
 
-$(window).load(function(){
-	$('#preloader').fadeOut('slow',function(){$(this).remove();});
-});
+$(document).ready(function() {
+	
+	setTimeout(function(){
+		$('#loader').addClass('loaded');
+	}, 000);
 
 });
 
 //INTRO
+
+//PROMPT
+
+function done(){
+	$("#prompt").css("animation", "1");	
+};
+
+
+window.addEventListener("scroll",function(){
+  if(window.pageYOffset > 0){
+   $("#button").css("opacity", "0.5");
+  }
+
+},false);
+
+
+
+setTimeout(done, 10000);
 
 //DISABLE SCROLL
 
@@ -21,11 +40,14 @@ setTimeout(prod2Show, 5000);
 setTimeout(authShow, 6000);
 setTimeout(authFade, 8000);
 setTimeout(chapShow, 10000);
+	  $("#prompt").css("display", "block");
 
 } else {
     $("body").removeClass("no-scroll");
+	$("body").addClass("scroll");
 	$("#prod-2").css("opacity", "1");
 	$("#chap").css("opacity", "1");
+	$("#prompt").css("display", "none");
 }
 };
 
@@ -85,6 +107,7 @@ function toggle(el){
 		$("#bg-sound").trigger('play');
 		$("#crow").trigger('play');
 		$("audio").prop('muted', false);
+		$("#prompt").css("display", "none");
 
     }
     else if(el.className=="pause")
