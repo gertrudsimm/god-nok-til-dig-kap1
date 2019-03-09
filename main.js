@@ -1,10 +1,20 @@
 //INTRO
 
+//DISABLE SCROLL
+
 window.onload = function() {
   if (window.pageYOffset === 0){
   $('body').addClass('no-scroll');
+	    setTimeout(prod1Show, 000);
+setTimeout(prod1Fade, 3000);
+setTimeout(prod2Show, 5000);
+setTimeout(authShow, 6000);
+setTimeout(authFade, 8000);
+setTimeout(chapShow, 10000);
 } else {
     $("body").removeClass("no-scroll");
+	$("#prod-2").css("opacity", "1");
+	$("#chap").css("opacity", "1");
 }
 };
 
@@ -13,23 +23,43 @@ function scrollStart() {
   $("body").addClass("scroll");
 };
 
-setTimeout(scrollStart, 8560);
+//INTRO-"VIDEO"
 
-/*LOADING
+function prod1Show() {
+	$("#prod-1").addClass("show fad");
+}
 
-$('#titels').each(function(){
-    if ($("#titels").is(":in-viewport")) {
-        $("#titels")[0].play();
-    } else {
-        $('#titels')[0].pause();
-    }
-})
+function prod1Fade() {
+	$("#prod-1").removeClass("show");
+}
 
-$(function() {
-    $('img').lazy();
-});
+function prod2Show() {
+	$("#prod-2").addClass("show fad");
+}
 
-*/
+function authShow() {
+	$("#auth").addClass("show fad");
+}
+
+function authFade() {
+	$("#auth").removeClass("show");
+}
+
+function chapShow() {
+	$("#chap").addClass("show fad");
+}
+
+//CALL FUNCTIONS
+
+
+
+setTimeout(scrollStart, 12000);
+
+//LOADING
+
+
+
+
 //SOUND
 
 
@@ -145,7 +175,7 @@ window.addEventListener("scroll",function(){
   var y = wrapOne.offsetTop;
   var z =  x + y;
 
-  if(window.pageYOffset > (y + x)){
+  if(window.pageYOffset > (y + x + 500)){
    boxOne.classList.add('show');
    //console.log('VIRKER')
   }
