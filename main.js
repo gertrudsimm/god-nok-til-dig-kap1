@@ -1,12 +1,10 @@
 //PRELOADER
 
-$(document).ready(function() {
-	
-	setTimeout(function(){
-		$('#loader').addClass('loaded');
-	}, 000);
+document.addEventListener('DOMContentLoaded', function() {
+    alert("Ready!");
+	$('#loader').addClass('loaded')
+}, false);
 
-});
 
 //INTRO
 
