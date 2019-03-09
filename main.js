@@ -4,8 +4,6 @@
 
 window.onload = function() {
   if (window.pageYOffset === 0){
-	  $("#crow").trigger('play');
-	  $("#bg-sound").trigger('play');
   $('body').addClass('no-scroll');
 	    setTimeout(prod1Show, 000);
 setTimeout(prod1Fade, 3000);
@@ -13,6 +11,8 @@ setTimeout(prod2Show, 5000);
 setTimeout(authShow, 6000);
 setTimeout(authFade, 8000);
 setTimeout(chapShow, 10000);
+
+
 } else {
     $("body").removeClass("no-scroll");
 	$("#prod-2").css("opacity", "1");
@@ -65,7 +65,13 @@ setTimeout(scrollStart, 12000);
 //SOUND
 
 //START SOUNDS
+function autoPlay() {
 
+$("#type").trigger('play');
+$("#type").prop("currentTime",0);
+}
+
+setTimeout(autoPlay, 0);
 
 
 //CROW AT SECTION 1
@@ -81,6 +87,7 @@ setTimeout(pauseAudio, 5560);
 //TYPING AT SECTION 2
 
 window.addEventListener("scroll",function(){
+
   let boxOne = document.getElementById('box-1');
   let wrapOne = document.getElementById('pt-1');
   let x = wrapOne.offsetHeight;
