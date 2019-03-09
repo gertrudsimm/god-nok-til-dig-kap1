@@ -15,7 +15,21 @@ function scrollStart() {
 
 setTimeout(scrollStart, 8560);
 
+/*LOADING
 
+$('#titels').each(function(){
+    if ($("#titels").is(":in-viewport")) {
+        $("#titels")[0].play();
+    } else {
+        $('#titels')[0].pause();
+    }
+})
+
+$(function() {
+    $('img').lazy();
+});
+
+*/
 //SOUND
 
 
