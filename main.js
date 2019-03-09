@@ -2,6 +2,7 @@
 
 //DISABLE SCROLL
 
+
 window.onload = function() {
   if (window.pageYOffset === 0){
   $('body').addClass('no-scroll');
@@ -11,13 +12,11 @@ setTimeout(prod2Show, 5000);
 setTimeout(authShow, 6000);
 setTimeout(authFade, 8000);
 setTimeout(chapShow, 10000);
-$("#bg-sound").trigger('play');
 
 } else {
     $("body").removeClass("no-scroll");
 	$("#prod-2").css("opacity", "1");
 	$("#chap").css("opacity", "1");
-  $("#bg-sound").trigger('play');
 }
 };
 
@@ -66,13 +65,32 @@ setTimeout(scrollStart, 12000);
 //SOUND
 
 //START SOUNDS
-function autoPlay() {
 
-$("#crow").trigger('play');
-$("#crow").prop("currentTime",0);
+
+
+function toggle(el){
+    if(el.className!="pause")
+    {
+        el.src='img/mute.png';
+        el.className="pause";
+		$("#bg-sound").trigger('play');
+		$("#crow").trigger('play');
+		$("audio").prop('muted', false);
+
+    }
+    else if(el.className=="pause")
+    {
+        el.src='img/unmute.png';
+        el.className="play";
+		$("#bg-sound").trigger('pause');
+		$("#crow").trigger('pause');
+		$("audio").prop('muted', true);
+    }
+
+    return false;
 }
 
-setTimeout(autoPlay, 1500);
+
 
 
 //CROW AT SECTION 1

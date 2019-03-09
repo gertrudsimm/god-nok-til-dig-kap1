@@ -20,6 +20,24 @@ p{
   	padding-bottom: 2%;
 }
 
+#button{
+	border-radius: 50px;
+	width: 100px;
+	height: 100px;
+	background-color: #2f2f30;
+	position: fixed;
+    bottom: 2%;
+    left: 2%;
+	text-shadow: 2px 2px 4px #000000;
+}
+
+input{
+  	width: 90px;
+  	margin: auto;
+  	display: block;
+	margin-top: 5%;
+}
+
 .txt-box{
   width: 60%;
   height: 90%;
@@ -60,7 +78,7 @@ p{
 	width: 80%;
 	left: 10%;
 	top: 25%;
-} 
+}
 
 .prod, .switch{
 	opacity: 0;
