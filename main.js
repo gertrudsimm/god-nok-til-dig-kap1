@@ -67,11 +67,11 @@ setTimeout(scrollStart, 12000);
 //START SOUNDS
 function autoPlay() {
 
-$("#type").trigger('play');
-$("#type").prop("currentTime",0);
+$("#crow").trigger('play');
+$("#crow").prop("currentTime",0);
 }
 
-setTimeout(autoPlay, 0);
+setTimeout(autoPlay, 1500);
 
 
 //CROW AT SECTION 1
@@ -82,7 +82,7 @@ function pauseAudio() {
   $("#crow").prop("currentTime",0);
 }
 
-setTimeout(pauseAudio, 5560);
+setTimeout(pauseAudio, 7560);
 
 //TYPING AT SECTION 2
 
