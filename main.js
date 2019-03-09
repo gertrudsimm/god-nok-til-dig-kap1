@@ -71,7 +71,7 @@ window.addEventListener("scroll",function(){
   let b = wrapTwo.offsetTop;
   let c =  a + b;
 
-  if((window.pageYOffset > (z + 1000)) && (window.pageYOffset < c) ){
+  if((window.pageYOffset > (z)) && (window.pageYOffset < c) ){
    $("#drops").trigger('play');
   }
   else {
@@ -145,7 +145,7 @@ window.addEventListener("scroll",function(){
   var y = wrapOne.offsetTop;
   var z =  x + y;
 
-  if(window.pageYOffset > (y + x + 1000)){
+  if(window.pageYOffset > (y + x)){
    boxOne.classList.add('show');
    //console.log('VIRKER')
   }
