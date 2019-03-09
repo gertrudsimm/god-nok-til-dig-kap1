@@ -1,7 +1,6 @@
 //PRELOADER
 
 document.addEventListener('DOMContentLoaded', function() {
-    alert("Ready!");
 	$('#loader').addClass('loaded')
 }, false);
 
