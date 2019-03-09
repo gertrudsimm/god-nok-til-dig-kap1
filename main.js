@@ -4,6 +4,8 @@
 
 window.onload = function() {
   if (window.pageYOffset === 0){
+	  $("#crow").trigger('play');
+	  $("#bg-sound").trigger('play');
   $('body').addClass('no-scroll');
 	    setTimeout(prod1Show, 000);
 setTimeout(prod1Fade, 3000);
@@ -62,6 +64,9 @@ setTimeout(scrollStart, 12000);
 
 //SOUND
 
+//START SOUNDS
+
+
 
 //CROW AT SECTION 1
 function pauseAudio() {
@@ -101,7 +106,7 @@ window.addEventListener("scroll",function(){
   let b = wrapTwo.offsetTop;
   let c =  a + b;
 
-  if((window.pageYOffset > (z)) && (window.pageYOffset < c) ){
+  if((window.pageYOffset > (z + 500)) && (window.pageYOffset < c) ){
    $("#drops").trigger('play');
   }
   else {
