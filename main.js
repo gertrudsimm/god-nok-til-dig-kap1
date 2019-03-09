@@ -11,12 +11,13 @@ setTimeout(prod2Show, 5000);
 setTimeout(authShow, 6000);
 setTimeout(authFade, 8000);
 setTimeout(chapShow, 10000);
-
+$("#bg-sound").trigger('play');
 
 } else {
     $("body").removeClass("no-scroll");
 	$("#prod-2").css("opacity", "1");
 	$("#chap").css("opacity", "1");
+  $("#bg-sound").trigger('play');
 }
 };
 
