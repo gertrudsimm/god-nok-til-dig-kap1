@@ -1,9 +1,12 @@
 //PRELOADER
 
-document.addEventListener('DOMContentLoaded', function() {
-	$('#loader').addClass('loaded')
-}, false);
 
+
+
+$( document ).ready(function() {
+    console.log( "ready!" );
+	$('#loader').addClass('loaded')
+});
 
 //INTRO
 
