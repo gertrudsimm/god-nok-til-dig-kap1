@@ -31,6 +31,7 @@ p{
     bottom: 2%;
     left: 2%;
 	box-shadow: 3px 3px 4px #000000;
+	z-index: 1000;
 }
 
 #button:hover {
@@ -47,6 +48,7 @@ p{
 	opacity: 0;
 	animation: blink 1.5s steps(10, start) infinite;
 	display: none;
+	z-index: 1000;
 
 }
 
