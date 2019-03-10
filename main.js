@@ -1,9 +1,4 @@
-//PRELOADER
 
-
-function preloader() {
-	$("#loader-cover").css("display", "block");
-}
 
 //INTRO
 
@@ -23,7 +18,7 @@ window.addEventListener("scroll",function(){
 
 
 
-setTimeout(done, 10000);
+
 
 //DISABLE SCROLL
 
@@ -31,7 +26,6 @@ setTimeout(done, 10000);
 window.onload = function() {
   if (window.pageYOffset === 0){
   $('body').addClass('no-scroll');
-	  setTimeout(preloader, 000);
 	    setTimeout(prod1Show, 000);
 setTimeout(prod1Fade, 3000);
 setTimeout(prod2Show, 5000);
@@ -41,7 +35,7 @@ setTimeout(chapShow, 10000);
 	  $("#prompt").css("display", "block");
 
 } else {
-	preloader()
+	$( "#loader" ).remove();
     $("body").removeClass("no-scroll");
 	$("body").addClass("scroll");
 	$("#prod-2").css("opacity", "1");
@@ -51,14 +45,12 @@ setTimeout(chapShow, 10000);
 };
 
 
-function scrollStart() {
-  $("body").addClass("scroll");
-};
 
 //INTRO-"VIDEO"
 
 function prod1Show() {
 	$("#prod-1").addClass("show fad");
+	$( "#loader" ).remove();
 }
 
 function prod1Fade() {
@@ -71,21 +63,23 @@ function prod2Show() {
 
 function authShow() {
 	$("#auth").addClass("show fad");
+	
 }
 
 function authFade() {
 	$("#auth").removeClass("show");
+	$("#prompt").css("animation", "1");
 }
 
 function chapShow() {
 	$("#chap").addClass("show fad");
+	$("body").addClass("scroll");
+	
 }
 
 //CALL FUNCTIONS
 
 
-
-setTimeout(scrollStart, 12000);
 
 //LOADING
 
@@ -134,7 +128,6 @@ function pauseAudio() {
   $("#crow").prop("currentTime",0);
 }
 
-setTimeout(pauseAudio, 7560);
 
 
 
@@ -163,29 +156,6 @@ window.addEventListener("scroll",function(){
 
 },false);
 
-//CROW, SECTION 3
-
-window.addEventListener("scroll",function(){
-  let boxOne = document.getElementById('box-1');
-  let wrapOne = document.getElementById('pt-1');
-  let x = wrapOne.offsetHeight;
-  let y = wrapOne.offsetTop;
-  let z =  x + y;
-  let wrapTwo = document.getElementById('pt-3');
-  let a = wrapTwo.offsetHeight;
-  let b = wrapTwo.offsetTop;
-  let c =  a + b;
-
-  if((window.pageYOffset > (z + 1200)) && (window.pageYOffset < c) ){
-   $("#crow").trigger('play');
-  }
-  else {
-    $("#crow").trigger('pause');
-    //set play time to 0
-    $("#crow").prop("currentTime",0);
-  }
-
-},false);
 
 
 //TRANSITIONS
@@ -212,7 +182,10 @@ function testScroll(ev){
   var y = wrapOne.offsetTop;
   var z =  x + y;
 
-  if(window.pageYOffset > z)typeWriter();
+  if(window.pageYOffset > z)
+	  typeWriter();
+		pauseAudio();
+	
 
 }
 
