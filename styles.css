@@ -44,16 +44,18 @@ p{
 	bottom: 100px;
 	left: 2%;
 	width: 100px;
+	opacity: 1;
 	text-align: center;
-	opacity: 0;
 	animation: blink 1.5s steps(10, start) infinite;
+	transition: 2s;
 	z-index: 1000;
+	pointer-events: none;
 
 }
 
 @keyframes blink{
 
-	50%{opacity: 1;}
+	50%{opacity: 0;}
 }
 
 input{
@@ -172,9 +174,12 @@ font-family: 'courier', sans-serif;
 /*PRELOADER*/
 
 
-#loader-cover{
-	background: #000;
-	display: none;
+#loader{
+	position: absolute;
+	top: 40%;
+	left: 40%;
+	width: 20%;
+	height: 40%;
 }
 
 #loader img{

@@ -2,11 +2,8 @@
 
 //INTRO
 
-//PROMPT
+//AUDIO BUTTON
 
-function done(){
-	$("#prompt").css("animation", "1");	
-};
 
 
 window.addEventListener("scroll",function(){
@@ -15,7 +12,6 @@ window.addEventListener("scroll",function(){
   }
 
 },false);
-
 
 
 
@@ -32,6 +28,7 @@ setTimeout(prod2Show, 5000);
 setTimeout(authShow, 6000);
 setTimeout(authFade, 8000);
 setTimeout(chapShow, 10000);
+setTimeout(scrll, 12000);
 	  $("#prompt").css("display", "block");
 
 } else {
@@ -68,11 +65,15 @@ function authShow() {
 
 function authFade() {
 	$("#auth").removeClass("show");
-	$("#prompt").css("animation", "1");
+	$("#prompt").css("opacity", "0");
 }
 
 function chapShow() {
 	$("#chap").addClass("show fad");
+	
+}
+
+function scrll() {
 	$("body").addClass("scroll");
 	
 }
