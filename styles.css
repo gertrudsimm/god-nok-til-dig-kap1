@@ -47,7 +47,6 @@ p{
 	text-align: center;
 	opacity: 0;
 	animation: blink 1.5s steps(10, start) infinite;
-	display: none;
 	z-index: 1000;
 
 }
@@ -171,14 +170,7 @@ font-family: 'courier', sans-serif;
 
 
 /*PRELOADER*/
-#loader, #loader-cover {
-    position: absolute;
-	width: 20%;
-	height: 20%;
-	top: 40%;
-	left: 40%;
-	
-}
+
 
 #loader-cover{
 	background: #000;
