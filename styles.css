@@ -170,17 +170,20 @@ font-family: 'courier', sans-serif;
 
 
 /*PRELOADER*/
-#loader {
-	z-index: 100;
-    position: fixed;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	background: blue;
+#loader, #loader-cover {
+    position: absolute;
+	width: 20%;
+	height: 20%;
+	top: 40%;
+	left: 40%;
 	
 }
 
-.loaded{
+#loader-cover{
+	background: #000;
 	display: none;
+}
+
+#loader img{
+	width: 100%;
 }

@@ -1,12 +1,9 @@
 //PRELOADER
 
 
-
-
-$( document ).ready(function() {
-    console.log( "ready!" );
-	$('#loader').addClass('loaded')
-});
+function preloader() {
+	$("#loader-cover").css("display", "block");
+}
 
 //INTRO
 
@@ -34,6 +31,7 @@ setTimeout(done, 10000);
 window.onload = function() {
   if (window.pageYOffset === 0){
   $('body').addClass('no-scroll');
+	  setTimeout(preloader, 000);
 	    setTimeout(prod1Show, 000);
 setTimeout(prod1Fade, 3000);
 setTimeout(prod2Show, 5000);
