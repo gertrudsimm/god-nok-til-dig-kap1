@@ -1,10 +1,8 @@
 
 
-//INTRO
+//------INTRO-----//
 
 //AUDIO BUTTON
-
-
 
 window.addEventListener("scroll",function(){
   if(window.pageYOffset > 0){
@@ -13,34 +11,28 @@ window.addEventListener("scroll",function(){
 
 },false);
 
+//SKIP BUTTON
 
-
-
-//DISABLE SCROLL
-
-
-window.onload = function() {
-  if (window.pageYOffset === 0){
-  $('body').addClass('no-scroll');
-	    setTimeout(prod1Show, 000);
-setTimeout(prod1Fade, 3000);
-setTimeout(prod2Show, 5000);
-setTimeout(authShow, 6000);
-setTimeout(authFade, 8000);
-setTimeout(chapShow, 10000);
-setTimeout(scrll, 12000);
-	  $("#prompt").css("display", "block");
-
-} else {
-	$( "#loader" ).remove();
-    $("body").removeClass("no-scroll");
-	$("body").addClass("scroll");
-	$("#prod-2").css("opacity", "1");
-	$("#chap").css("opacity", "1");
-	$("#prompt").css("display", "none");
+function arrowDown(){
+	$( "#skip-wrap" ).remove();
+	$("#arrow").css("display", "block");
+	
 }
-};
 
+function appear(){
+	$("#skip-wrap").css("opacity", "0.5");
+}
+
+function skip(){
+	$("#prod-1").css("display", "none");
+	$("#auth").css("display", "none");
+	$("#prompt").css("display", "none");
+	$("#button").css("opacity", "0.5");
+	prod2Show();
+	chapShow();
+	scrll();
+	arrowDown();
+}
 
 
 //INTRO-"VIDEO"
@@ -78,18 +70,38 @@ function scrll() {
 	
 }
 
-//CALL FUNCTIONS
+//PLAY "VIDEO" + ALLOW SCROLL
 
 
+window.onload = function() {
+  if (window.pageYOffset === 0){
+  $('body').addClass('no-scroll');
+	  setTimeout(appear, 000);
+	    setTimeout(prod1Show, 000);
+setTimeout(prod1Fade, 3000);
+setTimeout(prod2Show, 5000);
+setTimeout(authShow, 6000);
+setTimeout(authFade, 8000);
+setTimeout(chapShow, 10000);
+setTimeout(scrll, 12000);
+setTimeout(arrowDown, 12000);
+	  $("#prompt").css("display", "block");
 
-//LOADING
+} else {
+	$( "#loader" ).remove();
+    $("body").removeClass("no-scroll");
+	$("body").addClass("scroll");
+	$("#prod-2").css("opacity", "1");
+	$("#chap").css("opacity", "1");
+	$("#prompt").css("display", "none");
+	arrowDown()
+}
+};
 
 
+//-------SOUND-------//
 
-
-//SOUND
-
-//START SOUNDS
+//MUTE/UNMUTE BUTTON
 
 
 
@@ -102,6 +114,7 @@ function toggle(el){
 		$("#crow").trigger('play');
 		$("audio").prop('muted', false);
 		$("#prompt").css("display", "none");
+		$("#button").css("opacity", "0.5");
 
     }
     else if(el.className=="pause")
@@ -122,15 +135,12 @@ function toggle(el){
 //CROW AT SECTION 1
 
 
-function pauseAudio() {
+function pauseCrow() {
   //pause playing
   $("#crow").trigger('pause');
   //set play time to 0
   $("#crow").prop("currentTime",0);
 }
-
-
-
 
 
 
@@ -159,7 +169,7 @@ window.addEventListener("scroll",function(){
 
 
 
-//TRANSITIONS
+//------TRANSITIONS--------//
 
 //TYPE LOCATION, SECTION 2
 
@@ -176,6 +186,9 @@ function typeWriter() {
   }
 }
 
+
+//RUN TYPE WRTIER + STOP CROW AUDIO
+
 function testScroll(ev){
 
   var wrapOne = document.getElementById('pt-1');
@@ -183,9 +196,9 @@ function testScroll(ev){
   var y = wrapOne.offsetTop;
   var z =  x + y;
 
-  if(window.pageYOffset > z)
+  if(window.pageYOffset > z - 20)
 	  typeWriter();
-		pauseAudio();
+		pauseCrow();
 	
 
 }
