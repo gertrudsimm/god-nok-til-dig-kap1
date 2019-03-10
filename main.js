@@ -41,6 +41,7 @@ setTimeout(chapShow, 10000);
 	  $("#prompt").css("display", "block");
 
 } else {
+	preloader()
     $("body").removeClass("no-scroll");
 	$("body").addClass("scroll");
 	$("#prod-2").css("opacity", "1");
