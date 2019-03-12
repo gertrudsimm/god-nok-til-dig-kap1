@@ -223,3 +223,24 @@ window.addEventListener("scroll",function(){
   }
 
 },false);
+
+
+//FADE-IN-TEXT, SECTION 4
+
+window.addEventListener("scroll",function(){
+  var boxOne = document.getElementById('box-2');
+  var wrapOne = document.getElementById('pt-2');
+  var x = wrapOne.offsetHeight;
+  var y = wrapOne.offsetTop;
+  var z =  x + y;
+
+  if(window.pageYOffset > (y + x + 500)){
+   boxOne.classList.add('show');
+   setTimeout($('#box-1').removeClass("show"), 500);  
+   //console.log('VIRKER')
+  }
+  else {
+    boxOne.classList.remove('show');
+  }
+
+},false);

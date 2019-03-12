@@ -127,6 +127,10 @@ input{
   transition: 2s;
 }
 
+#box-2{
+	top: 370%;
+}
+
 
 .size{
   padding-top: 10%;
