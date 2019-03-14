@@ -131,6 +131,33 @@ input{
 	top: 370%;
 }
 
+#box-3{
+	top: 490%;
+}
+
+#box-4{
+	top: 610%;
+}
+
+#box-5{
+  top: 730%;
+}
+
+#box-6{
+  top: 850%;
+}
+
+#box-7{
+  top: 970%;
+}
+
+#box-8{
+  top: 1090%;
+}
+
+#end{
+  height: 90vh;
+}
 
 .size{
   padding-top: 10%;
@@ -158,6 +185,25 @@ input{
 #arrow-img {
 	width: 100px !important;
 	pointer-events: all !important;
+}
+
+#arrow-img2 {
+    filter: invert(1);
+	width: 100px !important;
+	pointer-events: all !important;
+  animation: bounce 5s infinite;
+}
+
+#arrowtop{
+  position: absolute;
+  top: 1160%;
+  left: 45%;
+  display: block;
+    transform: rotate(180deg);
+}
+
+#arrotop img{
+  filter: invert(1);
 }
 
 #prod-1, #prod-2{

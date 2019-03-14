@@ -11,10 +11,10 @@
 
 </head>
 <body class="no-scroll">
-	
+
 			<div id="loader">
 			<img src="img/load.gif" alt="loader"></div>
-    
+
 
 
   <section id="pt-1">
@@ -22,13 +22,13 @@
    <div id="button">
     <input type="image" src="img/unmute.png" class="play" onclick="toggle(this);"/>
     </div>
-    
+
     <div id="skip-wrap">
    <button id="skip" onclick="skip()">
    	<p>Spring over</p>
    </button>
    </div>
-   
+
    <div id="arrow"><a href="#pt-2"><img src="img/arrow.png" alt="Tryk for at starte" id="arrow-img"></a></div>
 
 
@@ -66,7 +66,7 @@
       <p>”Eliiinaaa?”</p>
     </div>
   </section>
-  <section>
+  <section id="pt-4">
     <div class="txt-box" id="box-2">
       <p>Elina, der var i gang med at balancere ovenpå en gammel mælkekasse, virrede med hovedet og ramte sin tommel med hammeren.</p>
       <p>Hun hev hænderne til sig. Hammeren faldt til jorden og landede på tæppet af blade med et blødt dunk.</p>
@@ -82,8 +82,8 @@
       <p>”Nej… Jeg kom til at sømme mit ærme fast.”</p>
     </div>
   </section>
-  <section>
-    <div class="txt-box">
+  <section id="pt-5">
+    <div class="txt-box" id="box-3">
       <p>Mens regnen tog til, fik de grinende befriet Elina. Anna sømmede presenningen på plads. Så satte de sig ind i hulen på de gamle skumgummiunderlag.</p>
       <p>Elina tog en dyb indåndingen og fyldte sin næse med duften af vådt gran. Over dem kunne de høre lyden af regnen, der bankede mod presenningstaget.</p>
       <p>”Øv, her er helt fugtigt,” sagde Signe. ”Jeg bliver altså ikke særlig længe.”</p>
@@ -94,8 +94,8 @@
       <p>Lyden af regnen falmede og forsvandt.</p>
     </div>
   </section>
-  <section>
-    <div class="txt-box">
+  <section id="pt-6">
+    <div class="txt-box" id="box-4">
       <p>Elina kiggede over på Anna og så hende præcis, som hun havde set ud, dengang hulen var blevet lavet.</p>
       <p>En solbrun lille pige med gyldne rottehaler og et grin klasket hen over fregnerne. Benene og armene virkede alt for lange, og stak ud til alle side. Hendes knæ var skrabede og hun prikkede til en frø, der var ved at flygte hen over jordbunden. </p>
       <p>Signes krøller var klippet til lige over skuldrene. Hun havde smækket sine buttede arme om benene og hendes store blå øjne flakkede rundt, hver gang hun hørte den mindste lyd. </p>
@@ -109,8 +109,8 @@
       <p>”Elina, hørte du overhovedet hvad jeg sagde?”</p>
     </div>
   </section>
-  <section>
-    <div class="txt-box">
+  <section id="pt-7">
+    <div class="txt-box" id="box-5">
       <p>”Hva’?”</p>
       <p>Lyden af regnen væltede ind over Elina igen. Den slog mod taget som et ur, der gik for hurtigt. Tik-tik-tik-tik-tik.</p>
       <p>Signe himlede med øjnene. Hun lignede ikke længere den lille pige, men var blevet forvandlet tilbage til Signe på 13. Æblekinderne var væk og hun sad slank og rank på underlaget. Hendes hår var langt og sat i den samme stramme hestehale, som Elina ikke kunne huske, hvornår hun sidst havde set hende uden.</p>
@@ -124,7 +124,7 @@
     </div>
   </section>
   <section>
-    <div class="txt-box">
+    <div class="txt-box" id="box-6">
       <p>Det var begyndt at dryppe ned fra midten af taget.</p>
       <p>”Måske flytter jeg bare over til hende i København,” tilføjede hun tøvende.</p>
       <p>”Det har du da ikke sagt,” udbrød Anna. ”Hvornår?”</p>
@@ -140,7 +140,7 @@
     </div>
   </section>
   <section>
-    <div class="txt-box">
+    <div class="txt-box" id="box-7">
       <p>”Hvor har du hørt det?” spurgte Elina.</p>
       <p>Tik-tik-tik.</p>
       <p>”Det ved jeg ikke. Jeg har bare hørt det,” sagde Anna. ”Han har nok selv fundet på det.”</p>
@@ -156,8 +156,8 @@
       <p>”Det er ikke engang sikkert, at jeg skal afsted,” sagde Elina.</p>
     </div>
   </section>
-  <section>
-    <div class="txt-box size">
+  <section id="end">
+    <div class="txt-box size" id="box-8">
       <p>”Hvorfor søger du ikke også legatet?” spurgte Anna.</p>
       <p>”Mig? Det kan jeg da ikke,” grinede Elina.</p>
       <p>”Hvorfor ikke?”</p>
@@ -165,6 +165,7 @@
       <p>En frø kvækkede.</p>
       <p>Før der kunne blive sagt et ord mere, lød der et smæld efterfulgt af et plask og alle pigerne hvinede, da presenningen, og alt det vand den havde samlet, væltede ned i hovederne på dem.</p>
     </div>
+    <div id="arrowtop"><a href="#pt-1"><img src="img/arrow.png" alt="Tryk for at starte" id="arrow-img2"></a></div>
   </section>
 
 
@@ -179,8 +180,30 @@
 <audio id="type" muted="true">
     <source src="sound/type.mp3">
 </audio>
- 
- 
+
+<audio id="rain-light" muted="true">
+    <source src="sound/rain-light.mp3">
+</audio>
+
+<audio id="rain-heavy" muted="true">
+    <source src="sound/rain-heavy.mp3">
+</audio>
+<audio id="rain-heavy2" muted="true">
+    <source src="sound/rain-heavy.mp3">
+</audio>
+
+<audio id="drone" muted="true">
+    <source src="sound/drone.mp3">
+</audio>
+
+<audio id="leak" muted="true">
+    <source src="sound/leak.mp3">
+</audio>
+
+<audio id="strain" muted="strain" loop>
+    <source src="sound/strain.mp3">
+</audio>
+
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
  <script src="main.js" type="text/javascript"></script>
 

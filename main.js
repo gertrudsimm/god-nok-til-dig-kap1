@@ -16,7 +16,7 @@ window.addEventListener("scroll",function(){
 function arrowDown(){
 	$( "#skip-wrap" ).remove();
 	$("#arrow").css("display", "block");
-	
+
 }
 
 function appear(){
@@ -52,7 +52,7 @@ function prod2Show() {
 
 function authShow() {
 	$("#auth").addClass("show fad");
-	
+
 }
 
 function authFade() {
@@ -62,12 +62,12 @@ function authFade() {
 
 function chapShow() {
 	$("#chap").addClass("show fad");
-	
+
 }
 
 function scrll() {
 	$("body").addClass("scroll");
-	
+
 }
 
 //PLAY "VIDEO" + ALLOW SCROLL
@@ -146,12 +146,11 @@ function pauseCrow() {
 
 //WATERDROPS AT SECTION 3
 window.addEventListener("scroll",function(){
-  let boxOne = document.getElementById('box-1');
   let wrapOne = document.getElementById('pt-1');
   let x = wrapOne.offsetHeight;
   let y = wrapOne.offsetTop;
   let z =  x + y;
-  let wrapTwo = document.getElementById('pt-3');
+  let wrapTwo = document.getElementById('box-1');
   let a = wrapTwo.offsetHeight;
   let b = wrapTwo.offsetTop;
   let c =  a + b;
@@ -168,6 +167,157 @@ window.addEventListener("scroll",function(){
 },false);
 
 
+
+//RAIN AT SECTION 4
+window.addEventListener("scroll",function(){
+  let wrapOne = document.getElementById('pt-2');
+  let x = wrapOne.offsetHeight;
+  let y = wrapOne.offsetTop;
+  let z =  x + y;
+  let wrapTwo = document.getElementById('box-2');
+  let a = wrapTwo.offsetHeight;
+  let b = wrapTwo.offsetTop;
+  let c =  a + b;
+
+  if((window.pageYOffset > (z + 500)) && (window.pageYOffset < c) ){
+   $("#rain-light").trigger('play');
+  }
+  else {
+    $("#rain-light").trigger('pause');
+    //set play time to 0
+    $("#rain-light").prop("currentTime",0);
+  }
+
+},false);
+
+//HEAVY RAIN AT SECTION 5
+window.addEventListener("scroll",function(){
+  let wrapOne = document.getElementById('pt-3');
+  let x = wrapOne.offsetHeight;
+  let y = wrapOne.offsetTop;
+  let z =  x + y;
+  let wrapTwo = document.getElementById('box-3');
+  let a = wrapTwo.offsetHeight;
+  let b = wrapTwo.offsetTop;
+  let c =  a + b;
+
+  if((window.pageYOffset > (z + 500)) && (window.pageYOffset < c) ){
+   $("#rain-heavy").trigger('play');
+   $("#bg-sound").trigger('play');
+   bgAudio.volume=1;
+  }
+  else {
+    $("#rain-heavy").trigger('pause');
+    //set play time to 0
+    $("#rain-heavy").prop("currentTime",0);
+  }
+
+},false);
+
+rainAudio=document.getElementById("rain-heavy");
+rainAudio.volume=0.4;
+
+//MYSTICAL DRONE AT SECTION 6
+window.addEventListener("scroll",function(){
+  let wrapOne = document.getElementById('pt-4');
+  let x = wrapOne.offsetHeight;
+  let y = wrapOne.offsetTop;
+  let z =  x + y;
+  let wrapTwo = document.getElementById('box-4');
+  let a = wrapTwo.offsetHeight;
+  let b = wrapTwo.offsetTop;
+  let c =  a + b;
+
+  if((window.pageYOffset > (z)) && (window.pageYOffset < c) ){
+   $("#drone").trigger('play');
+   $("#bg-sound").trigger('pause');
+   //set play time to 0
+   $("#bg-sound").prop("currentTime",0);
+
+  }
+  else {
+    $("#drone").trigger('pause');
+    //set play time to 0
+    $("#drone").prop("currentTime",0);
+  }
+
+},false);
+
+droneAudio=document.getElementById("drone");
+droneAudio.volume=1;
+
+//RETURN SOUNDS AT SECTION 7
+window.addEventListener("scroll",function(){
+  let wrapOne = document.getElementById('pt-5');
+  let x = wrapOne.offsetHeight;
+  let y = wrapOne.offsetTop;
+  let z =  x + y;
+  let wrapTwo = document.getElementById('box-5');
+  let a = wrapTwo.offsetHeight;
+  let b = wrapTwo.offsetTop;
+  let c =  a + b;
+  bgAudio=document.getElementById("bg-sound");
+
+  if(window.pageYOffset > (z + 500)){
+   $("#rain-heavy2").trigger('play');
+   $("#bg-sound").trigger('play');
+   bgAudio.volume=0.2;
+  }
+  else {
+    $("#rain-heavy2").trigger('pause');
+    //set play time to 0
+    $("#rain-heavy2").prop("currentTime",0);
+  }
+
+},false);
+
+rainAudio=document.getElementById("rain-heavy2");
+rainAudio.volume=0.2;
+
+//LEAK AT SECTION 8
+window.addEventListener("scroll",function(){
+  let wrapOne = document.getElementById('pt-6');
+  let x = wrapOne.offsetHeight;
+  let y = wrapOne.offsetTop;
+  let z =  x + y;
+  let wrapTwo = document.getElementById('box-6');
+  let a = wrapTwo.offsetHeight;
+  let b = wrapTwo.offsetTop;
+  let c =  a + b;
+  bgAudio=document.getElementById("bg-sound");
+
+  if((window.pageYOffset > (z)) && (window.pageYOffset < c) ){
+   $("#leak").trigger('play');
+  }
+  else {
+    $("#leak").trigger('pause');
+    //set play time to 0
+    $("#leak").prop("currentTime",0);
+  }
+
+},false);
+
+//STRAIN AT SECTION 9
+window.addEventListener("scroll",function(){
+  let wrapOne = document.getElementById('pt-7');
+  let x = wrapOne.offsetHeight;
+  let y = wrapOne.offsetTop;
+  let z =  x + y;
+  let wrapTwo = document.getElementById('box-7');
+  let a = wrapTwo.offsetHeight;
+  let b = wrapTwo.offsetTop;
+  let c =  a + b;
+
+  if((window.pageYOffset > (z)) && (window.pageYOffset < c) ){
+   $("#strain").trigger('play');
+  }
+  else {
+    $("#strain").trigger('pause');
+    //set play time to 0
+    $("#strain").prop("currentTime",0);
+  }
+
+},false);
 
 //------TRANSITIONS--------//
 
@@ -195,11 +345,15 @@ function testScroll(ev){
   var x = wrapOne.offsetHeight;
   var y = wrapOne.offsetTop;
   var z =  x + y;
+  let wrapTwo = document.getElementById('pt-1');
+  let a = wrapTwo.offsetHeight;
+  let b = wrapTwo.offsetTop;
+  let c =  a + b;
 
-  if(window.pageYOffset > z - 20)
+  if((window.pageYOffset > z - 20) && (window.pageYOffset < (c + 100)))
 	  typeWriter();
 		pauseCrow();
-	
+
 
 }
 
@@ -216,7 +370,6 @@ window.addEventListener("scroll",function(){
 
   if(window.pageYOffset > (y + x + 500)){
    boxOne.classList.add('show');
-   //console.log('VIRKER')
   }
   else {
     boxOne.classList.remove('show');
@@ -236,7 +389,127 @@ window.addEventListener("scroll",function(){
 
   if(window.pageYOffset > (y + x + 500)){
    boxOne.classList.add('show');
-   setTimeout($('#box-1').removeClass("show"), 500);  
+   $('#box-1').removeClass("show");
+   //console.log('VIRKER')
+  }
+  else {
+    boxOne.classList.remove('show');
+  }
+
+},false);
+
+//FADE-IN-TEXT, SECTION 5
+
+window.addEventListener("scroll",function(){
+  var boxOne = document.getElementById('box-3');
+  var wrapOne = document.getElementById('box-1');
+  var x = wrapOne.offsetHeight;
+  var y = wrapOne.offsetTop;
+  var z =  x + y;
+
+  if(window.pageYOffset > (y + x + 500)){
+   boxOne.classList.add('show');
+   $('#box-2').removeClass("show");
+   //console.log('VIRKER')
+  }
+  else {
+    boxOne.classList.remove('show');
+  }
+
+},false);
+
+//FADE-IN-TEXT, SECTION 6
+
+window.addEventListener("scroll",function(){
+  var boxOne = document.getElementById('box-4');
+  var wrapOne = document.getElementById('box-2');
+  var x = wrapOne.offsetHeight;
+  var y = wrapOne.offsetTop;
+  var z =  x + y;
+
+  if(window.pageYOffset > (y + x + 500)){
+   boxOne.classList.add('show');
+   $('#box-3').removeClass("show");
+   //console.log('VIRKER')
+  }
+  else {
+    boxOne.classList.remove('show');
+  }
+
+},false);
+
+//FADE-IN-TEXT, SECTION 7
+
+window.addEventListener("scroll",function(){
+  var boxOne = document.getElementById('box-5');
+  var wrapOne = document.getElementById('box-3');
+  var x = wrapOne.offsetHeight;
+  var y = wrapOne.offsetTop;
+  var z =  x + y;
+
+  if(window.pageYOffset > (y + x + 500)){
+   boxOne.classList.add('show');
+   $('#box-4').removeClass("show");
+   //console.log('VIRKER')
+  }
+  else {
+    boxOne.classList.remove('show');
+  }
+
+},false);
+
+//FADE-IN-TEXT, SECTION 8
+
+window.addEventListener("scroll",function(){
+  var boxOne = document.getElementById('box-6');
+  var wrapOne = document.getElementById('box-4');
+  var x = wrapOne.offsetHeight;
+  var y = wrapOne.offsetTop;
+  var z =  x + y;
+
+  if(window.pageYOffset > (y + x + 500)){
+   boxOne.classList.add('show');
+   $('#box-5').removeClass("show");
+   //console.log('VIRKER')
+  }
+  else {
+    boxOne.classList.remove('show');
+  }
+
+},false);
+
+//FADE-IN-TEXT, SECTION 9
+
+window.addEventListener("scroll",function(){
+  var boxOne = document.getElementById('box-7');
+  var wrapOne = document.getElementById('box-5');
+  var x = wrapOne.offsetHeight;
+  var y = wrapOne.offsetTop;
+  var z =  x + y;
+
+  if(window.pageYOffset > (y + x + 500)){
+   boxOne.classList.add('show');
+   $('#box-6').removeClass("show");
+   //console.log('VIRKER')
+  }
+  else {
+    boxOne.classList.remove('show');
+  }
+
+},false);
+
+//FADE-IN-TEXT, SECTION 10
+
+window.addEventListener("scroll",function(){
+  var boxOne = document.getElementById('box-8');
+  var wrapOne = document.getElementById('box-6');
+  var x = wrapOne.offsetHeight;
+  var y = wrapOne.offsetTop;
+  var z =  x + y;
+
+  if(window.pageYOffset > (y + x + 500)){
+   boxOne.classList.add('show');
+   $('#box-7').removeClass("show");
    //console.log('VIRKER')
   }
   else {
